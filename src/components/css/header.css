@@ -1,0 +1,18 @@
+header {
+  border: solid red;
+}
+header img {
+  width: 100%;
+}
+header .nav_container {
+  z-index: 1;
+  position: absolute;
+  border: solid black;
+  width: 99%;
+}
+header .images_container {
+  z-index: 0;
+  position: relative;
+}
+
+/*# sourceMappingURL=header.css.map */

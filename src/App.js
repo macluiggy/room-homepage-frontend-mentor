@@ -1,8 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+// components
+import Header from './components/header.js'
 
-function App() {
-  return 'hola'
+const App = () => {
+
+  return (
+    <>
+      <Header />
+    </>
+    )
 }
 
 export default App;

@@ -1,0 +1,18 @@
+@import 'mixins';
+
+header {
+	@include border(red);
+	img {
+		width: 100%;
+	}
+	.nav_container {
+		z-index: 1;
+		position: absolute;
+		@include border(black);
+		width: 99%;
+	}
+	.images_container {
+		z-index: 0;
+		position: relative;
+	}
+}
