@@ -10,9 +10,52 @@ header {
 		position: absolute;
 		@include border(black);
 		width: 99%;
+		.burger_and_logo_container {
+			@include border(red);
+			display: grid;
+			grid-template-columns: 45% 50%;
+			align-items: center;
+			.burger {
+				width: 2em;
+			}
+			img {
+				width: 4em;
+			}
+		}
+		.navbar {
+			background-color: white;
+			display: flex;
+			align-items: center;
+			position: absolute;
+			bottom: -50px;
+			width: 100%;
+			height: 200%;
+			justify-content: space-around;
+			font-size: 1.3em;
+			font-weight: 700;
+			display: none;
+			ul {
+				padding: 0;
+				display: flex;
+				@include border(blue);
+				text-transform: lowercase;
+				list-style-type: none;
+				li {
+					padding: 1em;
+				}
+			}
+		}
 	}
 	.images_container {
 		z-index: 0;
 		position: relative;
+		width: 100%;
+		object-fit: contain;
+		object-fit: cover;
+		img {
+			width: 120%;
+			position: relative;
+			right: 30px;
+		}
 	}
 }

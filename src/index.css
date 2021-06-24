@@ -1,3 +1,10 @@
+
+:root {
+  --dark_gray: hsl(0, 0%, 63%);
+  --black: hsl(0, 0%, 0%);
+  --white: hsl(0, 0%, 100%);
+  --very_dark_gray: hsl(0, 0%, 27%);
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,6 +12,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-width: 375px;
+  max-width: 1440px;
+  font-size: 12px;
+  font-family: 'Spartan', sans-serif;
 }
 
 code {

@@ -5,17 +5,20 @@ import './css/header.css';
 import desktop_image_1 from './images/desktop-image-hero-1.jpg';
 import desktop_image_2 from './images/desktop-image-hero-2.jpg';
 import desktop_image_3 from './images/desktop-image-hero-3.jpg';
+import logo from './images/logo.svg';
+import burger from './images/icon-hamburger.svg';
+import close from './images/icon-close.svg';
 
 const Header = () => 
 	<header>
 		<div className='nav_container'>
 		 	<figure className='burger_and_logo_container'>
-		 		<img src='' alt="" />
-		 		<img src='' alt="" />
+		 		<img src={burger} alt="" className='burger'/>
+		 		<img src={logo} alt="" />
 		 	</figure>
-			<nav>
+			<nav className='navbar'>
 		      <figure className='close_container'>
-		        <img />
+		        <img src={close} alt="" />
 		      </figure>
 		      <ul>
 		        <li>Home</li>
@@ -26,7 +29,7 @@ const Header = () =>
 		    </nav>
 		</div>
 		<div className='images_container'>
-			<img src={desktop_image_2} alt="" />
+			<img src={desktop_image_1} alt="" />
 		</div>
 	</header>
 
