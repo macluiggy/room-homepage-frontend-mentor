@@ -6,22 +6,21 @@ import desktop_image_1 from './images/desktop-image-hero-1.jpg';
 import desktop_image_2 from './images/desktop-image-hero-2.jpg';
 import desktop_image_3 from './images/desktop-image-hero-3.jpg';
 import mobile_image_1 from './images/mobile-image-hero-1.jpg';
+import mobile_image_2 from './images/mobile-image-hero-2.jpg';
 import logo from './images/logo.svg';
 import burger from './images/icon-hamburger.svg';
 import close from './images/icon-close.svg';
 
 
-let img1 = window.innerWidth >= 800 ? desktop_image_1 : mobile_image_1;
-
 const Header = () => {
-	const [value, setValue] = React.useState('navbar');
+	const [value, setValue] = React.useState('none');
 
 	const showNavBar = () => {
-		setValue('navbar')
+		setValue('flex')
 	}
 
 	const hideNavBar = () => {
-		setValue('hide_navbar')
+		setValue('none')
 	}
 	return <header>
 		<div className='nav_container'>
@@ -29,7 +28,7 @@ const Header = () => {
 		 		<img src={burger} alt="" className='burger' onClick={showNavBar}/>
 		 		<img src={logo} alt="" />
 		 	</figure>
-			<nav className={value} >
+			<nav className='navbar' style={{display: value}}>
 		      <figure className='close_container'>
 		        <img src={close} alt="" onClick={hideNavBar} />
 		      </figure>
@@ -42,7 +41,12 @@ const Header = () => {
 		    </nav>
 		</div>
 		<div className='images_container'>
-			<img src={img1} alt="" />
+			<img src={mobile_image_1} alt="" className='img1 active'/>
+			<img src={mobile_image_2} alt="" className='img2 '/>
+			<div className='arrows_container'>
+				<div className='arrow left'></div>
+				<div className='arrow right'></div>
+			</div>
 		</div>
 	</header>
 }
