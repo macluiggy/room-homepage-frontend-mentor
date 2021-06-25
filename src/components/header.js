@@ -15,22 +15,16 @@ import close from './images/icon-close.svg';
 const Header = () => {
 	const [value, setValue] = React.useState('none');
 
-	const showNavBar = () => {
-		setValue('flex')
-	}
-
-	const hideNavBar = () => {
-		setValue('none')
-	}
+	
 	return <header>
 		<div className='nav_container'>
 		 	<figure className='burger_and_logo_container'>
-		 		<img src={burger} alt="" className='burger' onClick={showNavBar}/>
+		 		<img src={burger} alt="" className='burger' onClick={() => setValue('flex')}/>
 		 		<img src={logo} alt="" />
 		 	</figure>
 			<nav className='navbar' style={{display: value}}>
 		      <figure className='close_container'>
-		        <img src={close} alt="" onClick={hideNavBar} />
+		        <img src={close} alt="" onClick={()=> setValue('none')} />
 		      </figure>
 		      <ul>
 		        <li>Home</li>
