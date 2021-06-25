@@ -13,14 +13,14 @@ header .nav_container {
 header .nav_container .burger_and_logo_container {
   border: solid red;
   display: grid;
-  grid-template-columns: 45% 50%;
+  grid-template-columns: 40% 50%;
   align-items: center;
 }
 header .nav_container .burger_and_logo_container .burger {
-  width: 2em;
+  width: 2.5em;
 }
 header .nav_container .burger_and_logo_container img {
-  width: 4em;
+  width: 8em;
 }
 header .nav_container .navbar {
   background-color: white;
@@ -33,7 +33,11 @@ header .nav_container .navbar {
   justify-content: space-around;
   font-size: 1.3em;
   font-weight: 700;
-  display: none;
+  opacity: 1;
+  transition: 2s;
+}
+header .nav_container .navbar .close_container img {
+  width: 1.5em;
 }
 header .nav_container .navbar ul {
   padding: 0;
@@ -45,6 +49,10 @@ header .nav_container .navbar ul {
 header .nav_container .navbar ul li {
   padding: 1em;
 }
+header .nav_container .hide_navbar {
+  opacity: 0;
+  transition: 2s;
+}
 header .images_container {
   z-index: 0;
   position: relative;
@@ -53,9 +61,8 @@ header .images_container {
   object-fit: cover;
 }
 header .images_container img {
-  width: 120%;
+  width: 100%;
   position: relative;
-  right: 30px;
 }
 
 /*# sourceMappingURL=header.css.map */

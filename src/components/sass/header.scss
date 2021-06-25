@@ -13,13 +13,13 @@ header {
 		.burger_and_logo_container {
 			@include border(red);
 			display: grid;
-			grid-template-columns: 45% 50%;
+			grid-template-columns: 40% 50%;
 			align-items: center;
 			.burger {
-				width: 2em;
+				width: 2.5em;
 			}
 			img {
-				width: 4em;
+				width: 8em;
 			}
 		}
 		.navbar {
@@ -33,7 +33,14 @@ header {
 			justify-content: space-around;
 			font-size: 1.3em;
 			font-weight: 700;
-			display: none;
+			opacity: 1;
+			transition: 2s;
+			.close_container {
+				//@include border(violet);
+				img {
+					width: 1.5em;
+				}
+			}
 			ul {
 				padding: 0;
 				display: flex;
@@ -45,6 +52,10 @@ header {
 				}
 			}
 		}
+		.hide_navbar {
+			opacity: 0;
+			transition: 2s;
+		}
 	}
 	.images_container {
 		z-index: 0;
@@ -53,9 +64,8 @@ header {
 		object-fit: contain;
 		object-fit: cover;
 		img {
-			width: 120%;
+			width: 100%;
 			position: relative;
-			right: 30px;
 		}
 	}
 }
