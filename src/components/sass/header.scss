@@ -154,8 +154,8 @@ header {
     }
 
     .header_article_container {
-        @include border(black);
-        padding: 7em 1.5em;
+        //@include border(black);
+        padding: 7em 4em;
 
         h2 {
             font-size: 3.5em;
@@ -171,10 +171,11 @@ header {
         }
 
         .button_container {
-        	display: grid;
-        	grid-template-columns: 50% 30%;
-        	grid-gap: 1em 2em;
-        	@include border(red);
+            display: grid;
+            grid-template-columns: 50% 30%;
+            grid-gap: 1em 2em;
+
+            //@include border(red);
             button {
                 font-size: 1.5em;
                 background-color: transparent;
@@ -186,16 +187,61 @@ header {
                 color: var(--very_dark_gray);
                 transition: color 1s;
             }
+
             button:hover {
-            	color: var(--dark_gray);
+                color: var(--dark_gray);
             }
-            svg {
-            	fill: blue;
-            	transition: transform 1s;
+
+            img {
+                fill: blue;
+                transition: transform 1s;
+                width: 20vw;
             }
-            button:hover + svg {
-            	transform: translate(100%);
+
+            button:hover+img {
+                transform: translate(100%);
             }
         }
+    }
+}
+
+@media screen and (min-width: 900px) {
+    header {
+    	display: grid;
+    	grid-template-columns: 60% 40%;
+    	.nav_container {
+    		display: flex !important;
+    		//@include border(red);
+    		.burger_and_logo_container {
+    			.burger {display: none;}
+    		}
+    		.navbar {
+    			display: flex !important;
+    			background-color: transparent;
+    			justify-content: flex-start;
+    			align-items: center;
+    			transform: translate(200px, -20px);
+    			.close_container {
+    				display: none;
+    			}
+    			ul {
+    				color: white;
+    			}
+    		}
+    	}
+    	.images_container {
+    		.arrows_container {
+    			.arrow {
+    				width: 5vw;
+    				height: 5vw;
+    			}
+    		}
+    	}
+    	.header_article_container {
+    		padding: 8em 5em;
+    		h2 {
+    			font-size: 2.8em;
+    		}
+    	}
     }
 }
