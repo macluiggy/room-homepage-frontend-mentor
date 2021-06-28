@@ -28,7 +28,7 @@ const Header = () => {
     useEffect(() => {
     	let interval = setInterval(nextClick, 5000);
     	return () => clearInterval(interval);
-    }, [index]);
+    });
 
     return <header>
 		<div className='nav_container'>
