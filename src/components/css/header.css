@@ -43,6 +43,11 @@ header .nav_container .navbar ul {
 }
 header .nav_container .navbar ul li {
   padding: 1em;
+  transition: opacity 0.5s;
+}
+header .nav_container .navbar ul li:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
 header .images_container {
   z-index: 0;
@@ -50,7 +55,6 @@ header .images_container {
   width: 100%;
   object-fit: contain;
   object-fit: cover;
-  position: relative;
 }
 header .images_container img {
   width: 100%;
@@ -102,6 +106,11 @@ header .images_container .arrows_container .arrow {
   width: 15vw;
   height: 15vw;
   background-color: black;
+  transition: background-color 0.5s;
+}
+header .images_container .arrows_container .arrow:hover {
+  background-color: var(--very_dark_gray);
+  cursor: pointer;
 }
 header .images_container .arrows_container .left {
   background-image: url("../images/icon-angle-left.svg");
@@ -119,7 +128,7 @@ header .header_article_container {
   padding: 7em 4em;
 }
 header .header_article_container h2 {
-  font-size: 3.5em;
+  font-size: 2.5em;
   font-weight: 600;
   margin: 0;
 }
@@ -146,6 +155,7 @@ header .header_article_container .button_container button {
 }
 header .header_article_container .button_container button:hover {
   color: var(--dark_gray);
+  cursor: pointer;
 }
 header .header_article_container .button_container img {
   fill: blue;
@@ -180,15 +190,33 @@ header .header_article_container .button_container button:hover + img {
   header .nav_container .navbar ul {
     color: white;
   }
+  header .images_container {
+    height: fit-content;
+    object-position: center;
+    width: 100%;
+  }
+  header .images_container .arrows_container {
+    transform: translate(130px);
+  }
   header .images_container .arrows_container .arrow {
     width: 5vw;
     height: 5vw;
   }
   header .header_article_container {
+    height: fit-content;
     padding: 8em 5em;
   }
   header .header_article_container h2 {
     font-size: 2.8em;
+  }
+  header .header_article_container p {
+    font-size: 1em;
+  }
+  header .header_article_container .button_container button {
+    font-size: 1.3em;
+  }
+  header .header_article_container .button_container img {
+    width: 50%;
   }
 }
 

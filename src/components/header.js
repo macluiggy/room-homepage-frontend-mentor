@@ -2,9 +2,6 @@ import React, { useState, useEffect, useCallback } from 'react';
 //css
 import './css/header.css';
 //images
-//import desktop_image_1 from './images/desktop-image-hero-1.jpg';
-//import desktop_image_2 from './images/desktop-image-hero-2.jpg';
-//import desktop_image_3 from './images/desktop-image-hero-3.jpg';
 import mobile_image_1 from './images/mobile-image-hero-1.jpg';
 import mobile_image_2 from './images/mobile-image-hero-2.jpg';
 import mobile_image_3 from './images/mobile-image-hero-3.jpg';
