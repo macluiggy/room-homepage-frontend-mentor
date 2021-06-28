@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 //css
 import './css/header.css';
 //images
@@ -21,9 +21,9 @@ const Header = () => {
     const prevClick = () => {
     	setIndex(index === 0 ? images.length - 1 : index - 1)
     }
-    const nextClick = () => {
+    const nextClick = useCallback(() => {
     	setIndex(index === images.length - 1 ? 0 : index + 1)
-    }
+    }, [images.length, index])
 
     useEffect(() => {
     	let interval = setInterval(nextClick, 5000);
@@ -55,6 +55,13 @@ const Header = () => {
 				<div className='arrow right' onClick={nextClick}></div>
 			</div>
 		</div>
+		<div className='header_article_container'>
+            <h2>Discover innovative ways to decorate</h2>
+            <p>We provide unmatched quality, comfort, and style for property owners across the country.
+                Our experts combine form and function in bringing your vision to life. Create a room in your
+                own style with our collection and make your property a reflection of you and what you love.</p>
+            <button>Shop now</button>
+        </div>
 	</header>
 }
 

@@ -128,4 +128,20 @@ header {
 			}
 		}
 	}
+	.header_article_container {
+		@include border(black);
+		padding: 3em 1.5em;
+		h2 {
+			font-size: 3.5em;
+			font-weight: 600;
+		}
+		p {
+			font-size: 1.5em;
+			color: var(--dark_gray);
+			line-height: 150%;
+		}
+		button {
+			
+		}
+	}
 }

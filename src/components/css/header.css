@@ -115,5 +115,18 @@ header .images_container .arrows_container .right {
   background-position: center;
   background-size: 25%;
 }
+header .header_article_container {
+  border: solid black;
+  padding: 3em 1.5em;
+}
+header .header_article_container h2 {
+  font-size: 3.5em;
+  font-weight: 600;
+}
+header .header_article_container p {
+  font-size: 1.5em;
+  color: var(--dark_gray);
+  line-height: 150%;
+}
 
 /*# sourceMappingURL=header.css.map */
