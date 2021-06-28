@@ -1,147 +1,201 @@
 @import 'mixins';
 
 header {
-	//@include border(red);
-	img {
-		width: 100%;
-	}
-	.nav_container {
-		z-index: 1;
-		padding: 2em 0 0 0;
-		position: absolute;
-		//@include border(black);
-		width: 100%;
-		.burger_and_logo_container {
-			//@include border(red);
-			display: grid;
-			grid-template-columns: 40% 50%;
-			align-items: center;
-			.burger {
-				width: 2.5em;
-			}
-			img {
-				width: 8em;
-			}
-		}
-		.navbar {
-			background-color: white;
-			display: flex;
-			align-items: center;
-			position: absolute;
-			bottom: -70px;
-			width: 100%;
-			height: 200%;
-			justify-content: space-around;
-			font-size: 1.3em;
-			font-weight: 700;
-			opacity: 1;
-			transition: 2s;
-			.close_container {
-				//@include border(violet);
-				img {
-					width: 1.5em;
-				}
-			}
-			ul {
-				padding: 0;
-				display: flex;
-				//@include border(blue);
-				text-transform: lowercase;
-				list-style-type: none;
-				li {
-					padding: 1em;
-				}
-			}
-		}
-	}
-	.images_container {
-		z-index: 0;
-		position: relative;
-		width: 100%;
-		object-fit: contain;
-		object-fit: cover;
-		position: relative;
-		img {
-			width: 100%;
-			display: none;
-			animation-duration: 1s;
-			animation-name: fadeOut;
-			animation-fill-mode: forwards;
-		}
-		@keyframes fadeOut {
-			from {
-				opacity: 1;
-			}
-			to {
-				opacity: 0;
-			}
-		}
-		.active {
-			display: block;
-			animation-duration: 1s;
-			animation-name: fadeIn;
-			animation-fill-mode: forwards;
-		}
-		@keyframes fadeIn {
-			from {
-				opacity: 0;
-			}
-			to {
-				opacity: 1;
-			}
-		}
-		@media screen and (min-width: 900px) {
-			.img0 {
-				content: url('../images/desktop-image-hero-1.jpg');
-			}
-			.img1 {
-				content: url('../images/desktop-image-hero-2.jpg');
-			}
-			.img2 {
-				content: url('../images/desktop-image-hero-3.jpg');
-			}
-		}
-		.arrows_container {
-			//@include border(orange);
-			position: absolute;
-			bottom: 0.0%;
-			right: 0;
-			display: flex;
-			//transform: translateX(-20px);
-			.arrow {
-				//@include border(blue);
-				width: 15vw;
-				height: 15vw;
-				background-color: black;
-			}
-			.left {
-				background-image: url('../images/icon-angle-left.svg');
-				background-repeat: no-repeat;
-				background-position: center;
-				background-size: 25%;
-			}
-			.right {
-				background-image: url('../images/icon-angle-right.svg');
-				background-repeat: no-repeat;
-				background-position: center;
-				background-size: 25%;
-			}
-		}
-	}
-	.header_article_container {
-		@include border(black);
-		padding: 3em 1.5em;
-		h2 {
-			font-size: 3.5em;
-			font-weight: 600;
-		}
-		p {
-			font-size: 1.5em;
-			color: var(--dark_gray);
-			line-height: 150%;
-		}
-		button {
-			
-		}
-	}
+
+    //@include border(red);
+    img {
+        width: 100%;
+    }
+
+    .nav_container {
+        z-index: 1;
+        padding: 2em 0 0 0;
+        position: absolute;
+        //@include border(black);
+        width: 100%;
+
+        .burger_and_logo_container {
+            //@include border(red);
+            display: grid;
+            grid-template-columns: 40% 50%;
+            align-items: center;
+
+            .burger {
+                width: 2.5em;
+            }
+
+            img {
+                width: 8em;
+            }
+        }
+
+        .navbar {
+            background-color: white;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            bottom: -70px;
+            width: 100%;
+            height: 200%;
+            justify-content: space-around;
+            font-size: 1.3em;
+            font-weight: 700;
+            opacity: 1;
+            transition: 2s;
+
+            .close_container {
+
+                //@include border(violet);
+                img {
+                    width: 1.5em;
+                }
+            }
+
+            ul {
+                padding: 0;
+                display: flex;
+                //@include border(blue);
+                text-transform: lowercase;
+                list-style-type: none;
+
+                li {
+                    padding: 1em;
+                }
+            }
+        }
+    }
+
+    .images_container {
+        z-index: 0;
+        position: relative;
+        width: 100%;
+        object-fit: contain;
+        object-fit: cover;
+        position: relative;
+
+        img {
+            width: 100%;
+            display: none;
+            animation-duration: 1s;
+            animation-name: fadeOut;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
+
+        .active {
+            display: block;
+            animation-duration: 1s;
+            animation-name: fadeIn;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media screen and (min-width: 900px) {
+            .img0 {
+                content: url('../images/desktop-image-hero-1.jpg');
+            }
+
+            .img1 {
+                content: url('../images/desktop-image-hero-2.jpg');
+            }
+
+            .img2 {
+                content: url('../images/desktop-image-hero-3.jpg');
+            }
+        }
+
+        .arrows_container {
+            //@include border(orange);
+            position: absolute;
+            bottom: 0.0%;
+            right: 0;
+            display: flex;
+
+            //transform: translateX(-20px);
+            .arrow {
+                //@include border(blue);
+                width: 15vw;
+                height: 15vw;
+                background-color: black;
+            }
+
+            .left {
+                background-image: url('../images/icon-angle-left.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 25%;
+            }
+
+            .right {
+                background-image: url('../images/icon-angle-right.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 25%;
+            }
+        }
+    }
+
+    .header_article_container {
+        @include border(black);
+        padding: 7em 1.5em;
+
+        h2 {
+            font-size: 3.5em;
+            font-weight: 600;
+            //@include border(blue);
+            margin: 0;
+        }
+
+        p {
+            font-size: 1.5em;
+            color: var(--dark_gray);
+            line-height: 150%;
+        }
+
+        .button_container {
+        	display: grid;
+        	grid-template-columns: 50% 30%;
+        	grid-gap: 1em 2em;
+        	@include border(red);
+            button {
+                font-size: 1.5em;
+                background-color: transparent;
+                border: none;
+                letter-spacing: 0.5em;
+                text-transform: uppercase;
+                font-weight: 550;
+                padding: 0;
+                color: var(--very_dark_gray);
+                transition: color 1s;
+            }
+            button:hover {
+            	color: var(--dark_gray);
+            }
+            svg {
+            	fill: blue;
+            	transition: transform 1s;
+            }
+            button:hover + svg {
+            	transform: translate(100%);
+            }
+        }
+    }
 }

@@ -117,16 +117,44 @@ header .images_container .arrows_container .right {
 }
 header .header_article_container {
   border: solid black;
-  padding: 3em 1.5em;
+  padding: 7em 1.5em;
 }
 header .header_article_container h2 {
   font-size: 3.5em;
   font-weight: 600;
+  margin: 0;
 }
 header .header_article_container p {
   font-size: 1.5em;
   color: var(--dark_gray);
   line-height: 150%;
+}
+header .header_article_container .button_container {
+  display: grid;
+  grid-template-columns: 50% 30%;
+  grid-gap: 1em 2em;
+  border: solid red;
+}
+header .header_article_container .button_container button {
+  font-size: 1.5em;
+  background-color: transparent;
+  border: none;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  font-weight: 550;
+  padding: 0;
+  color: var(--very_dark_gray);
+  transition: color 1s;
+}
+header .header_article_container .button_container button:hover {
+  color: var(--dark_gray);
+}
+header .header_article_container .button_container svg {
+  fill: blue;
+  transition: transform 1s;
+}
+header .header_article_container .button_container button:hover + svg {
+  transform: translate(100%);
 }
 
 /*# sourceMappingURL=header.css.map */
