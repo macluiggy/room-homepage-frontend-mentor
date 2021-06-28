@@ -14,43 +14,22 @@ import close from './images/icon-close.svg';
 
 
 const Header = () => {
-    let active = {
-        active1: 'active',
-        active2: '',
-        active3: '',
-    }
+    let images = [mobile_image_1, mobile_image_2, mobile_image_3]
     const [value, setValue] = React.useState('none');
     const [index, setIndex] = useState(0);
 
-    const handleClickPrev = () => {
-    	console.log(`estas en el index ${index}`)
-        setIndex(index - 1)
-        if (index < 1) {
-            setIndex(2)
-            active = {
-                active1: '',
-                active2: '',
-                active3: 'active',
-            }
-        }
-        if (index > 2) {
-        	setIndex(0)
-            active = {
-                active1: 'active',
-                active2: '',
-                active3: '',
-            }
-        }
-        if (index === 1) {
-            active = {
-                active1: '',
-                active2: 'active',
-                active3: '',
-            }
-        }
-        console.log(active)
+    const prevClick = () => {
+    	setIndex(index === 0 ? images.length - 1 : index - 1)
     }
-    useEffect(() => {}, [])
+    const nextClick = () => {
+    	setIndex(index === images.length - 1 ? 0 : index + 1)
+    }
+
+    React.useEffect(() => {
+    	let interval = setInterval(nextClick, 5000);
+    	return () => clearInterval(interval);
+    }, [index]);
+
     return <header>
 		<div className='nav_container'>
 		 	<figure className='burger_and_logo_container'>
@@ -70,12 +49,12 @@ const Header = () => {
 		    </nav>
 		</div>
 		<div className='images_container'>
-			<img src={mobile_image_1} alt="" className={`img ${active.active1}`}/>
-			<img src={mobile_image_2} alt="" className={`img ${active.active2}`}/>
-			<img src={mobile_image_3} alt="" className={`img ${active.active3}`}/>
+		{images.map((img, i) => {
+			return index === i ? <img key={img} src={img} alt="" className={`img${i} active`}/> : ''
+		})}
 			<div className='arrows_container'>
-				<div className='arrow left' onClick={handleClickPrev}></div>
-				<div className='arrow right' ></div>
+				<div className='arrow left' onClick={prevClick}></div>
+				<div className='arrow right' onClick={nextClick}></div>
 			</div>
 		</div>
 	</header>

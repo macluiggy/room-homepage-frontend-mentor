@@ -64,15 +64,25 @@ header {
 		img {
 			width: 100%;
 			display: none;
-		}
-		.active {
-			display: block;
-			transition: 1s;
 			animation-duration: 1s;
 			animation-name: fadeOut;
 			animation-fill-mode: forwards;
 		}
 		@keyframes fadeOut {
+			from {
+				opacity: 1;
+			}
+			to {
+				opacity: 0;
+			}
+		}
+		.active {
+			display: block;
+			animation-duration: 1s;
+			animation-name: fadeIn;
+			animation-fill-mode: forwards;
+		}
+		@keyframes fadeIn {
 			from {
 				opacity: 0;
 			}
@@ -81,11 +91,14 @@ header {
 			}
 		}
 		@media screen and (min-width: 900px) {
-			.img1 {
+			.img0 {
 				content: url('../images/desktop-image-hero-1.jpg');
 			}
-			.img2 {
+			.img1 {
 				content: url('../images/desktop-image-hero-2.jpg');
+			}
+			.img2 {
+				content: url('../images/desktop-image-hero-3.jpg');
 			}
 		}
 		.arrows_container {
