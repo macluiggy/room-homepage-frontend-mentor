@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 //css
 import './css/header.css';
 //images
-import desktop_image_1 from './images/desktop-image-hero-1.jpg';
-import desktop_image_2 from './images/desktop-image-hero-2.jpg';
-import desktop_image_3 from './images/desktop-image-hero-3.jpg';
+//import desktop_image_1 from './images/desktop-image-hero-1.jpg';
+//import desktop_image_2 from './images/desktop-image-hero-2.jpg';
+//import desktop_image_3 from './images/desktop-image-hero-3.jpg';
 import mobile_image_1 from './images/mobile-image-hero-1.jpg';
 import mobile_image_2 from './images/mobile-image-hero-2.jpg';
 import mobile_image_3 from './images/mobile-image-hero-3.jpg';
@@ -15,7 +15,7 @@ import close from './images/icon-close.svg';
 
 const Header = () => {
     let images = [mobile_image_1, mobile_image_2, mobile_image_3]
-    const [value, setValue] = React.useState('none');
+    const [value, setValue] = useState('none');
     const [index, setIndex] = useState(0);
 
     const prevClick = () => {
@@ -25,7 +25,7 @@ const Header = () => {
     	setIndex(index === images.length - 1 ? 0 : index + 1)
     }
 
-    React.useEffect(() => {
+    useEffect(() => {
     	let interval = setInterval(nextClick, 5000);
     	return () => clearInterval(interval);
     }, [index]);
@@ -49,9 +49,7 @@ const Header = () => {
 		    </nav>
 		</div>
 		<div className='images_container'>
-		{images.map((img, i) => {
-			return index === i ? <img key={img} src={img} alt="" className={`img${i} active`}/> : ''
-		})}
+			<ShowCurrentImage images={images} index={index}/>
 			<div className='arrows_container'>
 				<div className='arrow left' onClick={prevClick}></div>
 				<div className='arrow right' onClick={nextClick}></div>
@@ -59,4 +57,10 @@ const Header = () => {
 		</div>
 	</header>
 }
+
+ const ShowCurrentImage = ({index, images}) => 
+		images.map((img, i) => index === i 
+			? <img key={img} src={img} alt="" className={`img${i} active`}/> 
+			: '')
+
 export default Header;
