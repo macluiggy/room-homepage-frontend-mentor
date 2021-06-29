@@ -9,6 +9,8 @@ import logo from './images/logo.svg';
 import burger from './images/icon-hamburger.svg';
 import close from './images/icon-close.svg';
 import arrow from './images/icon-arrow.svg';
+//json
+import articles from './articles.json'
 
 
 const Header = () => {
@@ -54,10 +56,11 @@ const Header = () => {
 			</div>
 		</div>
 		<div className='header_article_container'>
-            <h2>Discover innovative ways to decorate</h2>
+		<ShowCurrentArticle index={index} />
+            {/*<h2>Discover innovative ways to decorate</h2>
             <p>We provide unmatched quality, comfort, and style for property owners across the country.
                 Our experts combine form and function in bringing your vision to life. Create a room in your
-                own style with our collection and make your property a reflection of you and what you love.</p>
+                own style with our collection and make your property a reflection of you and what you love.</p>*/}
             <div className='button_container'>
             	<button>Shop now</button><img src={arrow} alt="right incon arrow" />
             </div>
@@ -65,9 +68,14 @@ const Header = () => {
 	</header>
 }
 
- const ShowCurrentImage = ({index, images}) => 
-		images.map((img, i) => index === i 
-			? <img key={img} src={img} alt="" className={`img${i} active`}/> 
-			: '')
+const ShowCurrentImage = ({index, images}) => 
+	images.map((img, i) => index === i 
+		&& <img key={img} src={img} alt="" className={`img${i} active`}/>)
 
+const ShowCurrentArticle = ({index}) =>
+	articles.map(({id, title, paragraph}) => id === index 
+		&& 	<React.Fragment key={id}>
+				<h2 key={id}>{title}</h2><p>{paragraph}</p>
+			</React.Fragment>)
+	
 export default Header;
