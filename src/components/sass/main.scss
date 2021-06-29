@@ -1,0 +1,16 @@
+@import 'mixins';
+main {
+	//@include border(blue);
+	width: 100%;
+	display: grid;
+	grid-template-rows: 1fr 1fr 1fr;
+	align-items: center;
+	.about_article {
+		padding: 1em;
+		h2 {
+			font-size: 1.3em;
+			text-transform: uppercase;
+			letter-spacing: 0.5em;
+		}
+	}
+}

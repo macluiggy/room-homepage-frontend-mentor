@@ -219,6 +219,7 @@ header {
     header {
     	display: grid;
     	grid-template-columns: 60% 40%;
+        margin: 0;
     	.nav_container {
     		display: flex !important;
     		//@include border(red);
@@ -230,7 +231,8 @@ header {
     			background-color: transparent;
     			justify-content: flex-start;
     			align-items: center;
-    			transform: translate(200px, -20px);
+                position: relative;
+                bottom: 0px;
     			.close_container {
     				display: none;
     			}
