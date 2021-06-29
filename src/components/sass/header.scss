@@ -247,7 +247,7 @@ header {
     		object-position: center;
     		width: 100%;
     		.arrows_container {
-    			transform: translate(130px);
+    			transform: translate(100%);
     			.arrow {
     				width: 5vw;
     				height: 5vw;
@@ -258,20 +258,36 @@ header {
     		//@include border(red);
     		height: fit-content;
     		padding: 8em 5em;
+            animation-name: show;
+            animation-delay: 1s;
+            animation-fill-mode: forwards;
+
     		h2 {
-    			font-size: 2.8em;
+    			font-size: 2vw;
     		}
     		p {
-    			font-size: 1em;
+    			font-size: 1vw;
     		}
     		.button_container {
     			button {
-    				font-size: 1.3em;
+    				font-size: 1vw;
     			}
     			img {
     				width: 50%;
     			}
     		}
     	}
+        @keyframes show {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
     }
+}
+
+.none {
+    display: none;
 }

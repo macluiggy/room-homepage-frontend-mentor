@@ -198,7 +198,7 @@ header .header_article_container .button_container button:hover + img {
     width: 100%;
   }
   header .images_container .arrows_container {
-    transform: translate(130px);
+    transform: translate(100%);
   }
   header .images_container .arrows_container .arrow {
     width: 5vw;
@@ -207,19 +207,33 @@ header .header_article_container .button_container button:hover + img {
   header .header_article_container {
     height: fit-content;
     padding: 8em 5em;
+    animation-name: show;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
   }
   header .header_article_container h2 {
-    font-size: 2.8em;
+    font-size: 2vw;
   }
   header .header_article_container p {
-    font-size: 1em;
+    font-size: 1vw;
   }
   header .header_article_container .button_container button {
-    font-size: 1.3em;
+    font-size: 1vw;
   }
   header .header_article_container .button_container img {
     width: 50%;
   }
+  @keyframes show {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+.none {
+  display: none;
 }
 
 /*# sourceMappingURL=header.css.map */

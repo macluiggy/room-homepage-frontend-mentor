@@ -70,12 +70,16 @@ const Header = () => {
 
 const ShowCurrentImage = ({index, images}) => 
 	images.map((img, i) => index === i 
-		&& <img key={img} src={img} alt="" className={`img${i} active`}/>)
+		? <img key={img} src={img} alt="" className={`img${i} active`}/>
+		: <img key={img} src={img} alt="" className={`img${i} none`}/>)
 
 const ShowCurrentArticle = ({index}) =>
 	articles.map(({id, title, paragraph}) => id === index 
-		&& 	<React.Fragment key={id}>
+		  	?	<React.Fragment key={id}>
 				<h2 key={id}>{title}</h2><p>{paragraph}</p>
+			</React.Fragment>
+			: <React.Fragment key={id}>
+				<h2  className='none' key={id}>{title}</h2><p className='none' >{paragraph}</p>
 			</React.Fragment>)
 	
 export default Header;
