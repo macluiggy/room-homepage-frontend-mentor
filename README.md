@@ -55,7 +55,7 @@ In this project i learned:
 - Using function components instead of class components
 - Javascript destructuring when passing props and to map in an array of objects
 
-```react
+```js
 const Header = () => {
     let images = [mobile_image_1, mobile_image_2, mobile_image_3]
     const [value, setValue] = useState('none');
